@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 라디오 버튼을 이용해서 빨강 또는 파랑을 선택하면 아래 문자열이 빨강색 또는 파란색으로 -->
+    <!-- 스타일이 변하도록 만들어 보셈 -->
+    <div id="app">
+        <p :style = "{color : color}">선택한 색상은 {{color}} 입니다.</p>
+        <label>
+            <input type="radio" value="red" v-model = "color">
+            빨강
+        </label>
+        <br>
+
+        <label>
+            <input type="radio" value="blue" v-model = "color">
+            파랑
+        </label>
+    </div>
+
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                color : ''
+            }
+        });
+    </script>
+    
+</body>
+</html>

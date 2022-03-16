@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <h2>객체의 값을 표시하는 연습문제</h2>
+    <!-- Vue 영역 -->
+    <div id="app">
+        <!-- 객체의 값 name : '다즐링', price : 600 -->
+        <p>{{object}}</p>
+        <!-- 객체의 값 중에서 name price 원 -->
+        <!-- 출력 : name price 원 -->
+        <p>{{object.name + ' ' + object.price + '원'}}</p>
+        
+        <!-- <p>{{array.name}} {{array.price}}원</p> -->
+    </div>
+    
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                object : {name : '다즐링', price : 600}
+            }
+        })
+    </script>
+
+</body>
+</html>

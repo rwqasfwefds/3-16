@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- Vue 영역 -->
+    <div id="app">
+        <!-- v-bind: == : 그냥 콜론만 써도 됨(단축식) -->
+        <!-- 1. 네이버 연결 -->
+        <p><a :href="link">네이버</a></p>
+        <!-- 2. 이미지 표시 -->
+        <p><img :src="image"></img></p>
+        <!-- 3. 텍스트를 왼쪽 정렬 -->
+        <p :align = "Le">ㅎㅇ</p>
+        <!-- 4. 텍스트를 가운데 정렬 -->
+        <p :align = "Ce">ㅂㅇ</p>
+        <!-- 5. 텍스트를 오른쪽 정렬 -->
+        <p :align = "Ri">ㅅㄱ</p>
+        <!-- 6. color를 red 바꾸는데 v-bind 변수 이용해서 -->
+        <p :style="{color : Re}">인라인을 이용해서 글자색을 빨간색으로</p>
+    </div>
+    
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                link : 'http://naver.com',
+                image : 'img/android.png',
+                Le : 'left',
+                Ce : 'center',
+                Ri : 'right',
+                Re : 'red'
+            }
+        })
+    </script>
+</body>
+</html>

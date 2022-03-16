@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <h2>오브젝트 데이터의 내부를 확인하는 에제</h2>
+    <!-- Vue 영역 -->
+    <div id="app">
+        <ul>
+            <!-- 자바 스크립트의 for of와 Vue에서 for in은 같은 쉨히 -->
+            <!-- for of를 써도 되는디? -->
+            <li v-for = "fruit in fruits">{{fruit}}</li>
+        </ul>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el : '#app',
+            data : {
+                fruits : ['딸기', '오렌지', '사과', '포도']
+            }
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        p {
+            border: 4px solid teal;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Vue 영역 -->
+    <div id="app">
+        <h3>if directive를 이용한 조건처리</h3>
+        <!-- show와 error이 눈으로 볼땐 똑같은데 내부를 보면 show는 태그자체는 보이지만 display를 none로 바꿔줌 -->
+        <!-- <p v-show = "error">에러 발생 : 이미지를 로드하지 못했싐</p> -->
+
+        <!-- error가 true면 보이고(생성 됨) false면 안 보임(생성 자체가 안 됨) -->
+        <p v-if = "error">에러 발생 : 이미지를 로드하지 못했싐</p>
+        <p v-else>에러가 발생하지 않았슴</p>
+        <button v-on:click = "error = !error">에러 ON-OFF</button>
+    </div>
+
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                error : false
+            }
+        })
+    </script>
+    
+</body>
+</html>

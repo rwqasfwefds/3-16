@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h2>링크를 지정하는 예제</h2>
+    <!-- Vue 영역 -->
+    <div id="app">
+        <a href="http://www.naver.com">링크를 직접 저장</a>
+        <br>
+        <a v-bind:href="myURL">v-bind를 이용해서 링크를 저장</a>
+
+        <p align = "right">우측정렬 직접 지정</p>
+        <p v-bind:align = "myAlign">v-bind를 이용해서 우측정렬 지정</p>
+
+        <p style="color : #E80;">문자색 직접 지정</p>
+        <p style="font-size: 200%;">글자크기 직접 지정</p>
+        <p style="background-color : aqua;">배경색 직접 지정</p>
+        <br>
+        <br>
+        <p v-bind:style="{color : myColor}">v-bind를 이용해서 문자색 지정</p>
+        <p v-bind:style="{fontSize: mySize}">v-bind를 이용해서 글자크기 지정</p>
+        <p v-bind:style="{backgroundColor : myBackColor}">v-bind를 이용해서 배경색 지정</p>
+    </div>
+
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                myURL : 'http://www.google.com',
+                myAlign : 'right',
+                myColor : '#E080000',
+                mySize : '200%',
+                myBackColor : 'aqua'
+            }
+        });
+    </script>
+    
+</body>
+</html>

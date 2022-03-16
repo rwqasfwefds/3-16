@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <!-- 뷰 영역 -->
+    <div id="app">
+        <!-- v-model : input태그 안에서만 사용가능 예) x 인풋에 5 를 넣으면 data의 x 값이 자동으로 5로 변경됨-->
+        <p>x <input v-model = "x"></p>
+        <p>y <input v-model = "y"></p>
+        <p>-------------------------</p>
+        <p>=<span v-text = "result"></span></p>
+    </div>
+    
+    <script>
+        let calc = new Vue({
+            el : '#app',
+            data : {
+                x : 0,
+                y : 0,
+                lastResult : 0
+            },
+// methods는 이벤트와 연결(수동 호출), computed는 이벤트랑 연결 안 하고 연결 된 변수명에 변화가 생기면 자동으로 실행(result값이 바뀌면 자동으로 호출)
+            computed: {
+                result : function(){
+                    this.lastResult = Number(this.x) + Number(this.y);
+                    return this.lastResult
+                }   
+            }
+        })
+    </script>
+</body>
+</html>
